@@ -1,95 +1,98 @@
 {
   "name": "stdcommands",
-	"displayName": "StdCommands",
-	"description": "Per workspace configurable standard commands (build, watch, etc.)",
-	"version": "0.1.0",
-	"engines": {
-		"vscode": "^1.52.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"publisher": "anhag",
-	"activationEvents": [
-        "onCommand:stdcommands.prepare",
-        "onCommand:stdcommands.build",
-        "onCommand:stdcommands.watch",
-        "onCommand:stdcommands.clean"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"commands": [{
-			"command": "stdcommands.prepare",
-			"title": "[S] Prepare"
-		},
-		{
-			"command": "stdcommands.build",
-			"title": "[S] Build"
-		},
-		{
-			"command": "stdcommands.watch",
-			"title": "[S] Watch"
-		},
-		{
-			"command": "stdcommands.clean",
-			"title": "[S] Clean"
-		}],
-		"configuration":{
-			"title": "Standard commands",
-			"properties": {
-				"stdcommands.prepare": {
-					"type": "string",
-					"default": "",
-					"description": "Shell-command for your default prepare-action"
-				},
-				"stdcommands.build": {
-					"type": "string",
-					"default": "",
-					"description": "Shell-command for your default build-action"
-				},
-				"stdcommands.watch": {
-					"type": "string",
-					"default": "",
-					"description": "Shell-command for your default watch-action"
-				},
-				"stdcommands.clean": {
-					"type": "string",
-					"default": "",
-					"description": "Shell-command for your default clean-action"
-				},
-				"stdcommands.switchToRoot": {
-					"type": "boolean",
-					"default": false,
-					"description": "Switch to workspace root before running the commands."
-				}
-			}
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run package",
-		"compile": "webpack --config ./build/node-extension.webpack.config.js",
-		"watch": "webpack --watch --config ./build/node-extension.webpack.config.js",
-		"package": "webpack --mode production --devtool hidden-source-map --config ./build/node-extension.webpack.config.js",
-		"test-compile": "tsc -p ./",
-		"test-watch": "tsc -watch -p ./",
-		"pretest": "yarn run test-compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.52.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"eslint": "^7.15.0",
-		"@typescript-eslint/eslint-plugin": "^4.9.0",
-		"@typescript-eslint/parser": "^4.9.0",
-		"glob": "^7.1.6",
-		"mocha": "^8.1.3",
-		"typescript": "^4.1.2",
-		"vscode-test": "^1.4.1",
-		"ts-loader": "^8.0.11",
-		"webpack": "^5.10.0",
-		"webpack-cli": "^4.2.0"
-	}
+  "displayName": "StdCommands",
+  "description": "Per workspace configurable standard commands (build, watch, etc.)",
+  "version": "0.1.0",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "anhag",
+  "activationEvents": [
+    "onCommand:stdcommands.prepare",
+    "onCommand:stdcommands.build",
+    "onCommand:stdcommands.watch",
+    "onCommand:stdcommands.clean"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "stdcommands.prepare",
+        "title": "[S] Prepare"
+      },
+      {
+        "command": "stdcommands.build",
+        "title": "[S] Build"
+      },
+      {
+        "command": "stdcommands.watch",
+        "title": "[S] Watch"
+      },
+      {
+        "command": "stdcommands.clean",
+        "title": "[S] Clean"
+      }
+    ],
+    "configuration": {
+      "title": "Standard commands",
+      "properties": {
+        "stdcommands.prepare": {
+          "type": "string",
+          "default": "",
+          "description": "Shell-command for your default prepare-action"
+        },
+        "stdcommands.build": {
+          "type": "string",
+          "default": "",
+          "description": "Shell-command for your default build-action"
+        },
+        "stdcommands.watch": {
+          "type": "string",
+          "default": "",
+          "description": "Shell-command for your default watch-action"
+        },
+        "stdcommands.clean": {
+          "type": "string",
+          "default": "",
+          "description": "Shell-command for your default clean-action"
+        },
+        "stdcommands.switchToRoot": {
+          "type": "boolean",
+          "default": false,
+          "description": "Switch to workspace root before running the commands."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack --config ./build/node-extension.webpack.config.js",
+    "watch": "webpack --watch --config ./build/node-extension.webpack.config.js",
+    "package": "webpack --mode production --devtool hidden-source-map --config ./build/node-extension.webpack.config.js",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "pretest": "yarn run test-compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.52.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "eslint": "^7.15.0",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.1.3",
+    "typescript": "^4.1.2",
+    "vscode-test": "^1.4.1",
+    "ts-loader": "^8.0.11",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  }
 }
