@@ -64,6 +64,11 @@
           "type": "boolean",
           "default": false,
           "description": "Switch to workspace root before running the commands."
+        },
+        "stdcommands.rootFolderOverride": {
+          "type": "string",
+          "default": "",
+          "description": "If specified, this is used instead of the first workspace root-folder when switchToRoot is true."
         }
       }
     }
